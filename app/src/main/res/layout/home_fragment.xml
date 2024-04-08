@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:id="@+id/linear_search_bar_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_light">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:drawableEnd="@drawable/baseline_search_24"
+                    android:background="@color/transparent"
+                    android:hint="Find Wallpaper..."
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:drawableTint="@color/grey"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/img_noti"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/baseline_notifications_24"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/img_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear_search_bar_holder"/>
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dot_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:dotsColor="@color/grey_light"
+        app:selectedDotColor="@color/grey"
+        app:dotsElevation="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@id/img_viewPager"
+        app:layout_constraintStart_toStartOf="@id/img_viewPager"
+        app:layout_constraintEnd_toEndOf="@id/img_viewPager"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
